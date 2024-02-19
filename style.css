@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  color: white;
+}
+
+.parent {
+  background-color: black;
+  padding: 1rem;
+  min-height: 60vh;
+
+  /* grid layout css */
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.parent div {
+  background-color: orangered;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-1 {
+  grid-column: 1/4;
+}
+
+.item-2 {
+  grid-row: 2/4;
+}
+
+.item-6 {
+  grid-row-start: 3;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.item-5 {
+  grid-row: 2/3;
+  grid-column: 2/2;
+}
+
+.parent1 {
+  display: grid;
+  background-color: red;
+  padding: 10px;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 60vh;
+}
+
+.parent1 div {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent2 {
+  background-color: black;
+  padding: 1rem;
+  min-height: 60vh;
+
+  /* grid layout css */
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "i1 i1 i1"
+    "i2 i2 i3"
+    "i4 i5 i3"
+    "i6 i7 i3"
+    "i9 i9 i9"
+    "i10 i10 i10";
+}
+
+.parent2 div {
+  background-color: orangered;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item11 {
+  grid-area: i1;
+}
+
+.item22 {
+  grid-area: i2;
+}
+
+.item33 {
+  grid-area: i3;
+}
+
+.item44 {
+  grid-area: i4;
+}
+
+.item55 {
+  grid-area: i5;
+}
+
+.item66 {
+  grid-area: i6;
+}
+
+.item77 {
+  grid-area: i7;
+}
+
+.item88 {
+  grid-area: i8;
+}
+
+.item99 {
+  grid-area: i9;
+}
+
+.circle {
+  visibility: hidden;
+  border-radius: 50%;
+  grid-area: i10;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+}
+
+/* ipad */
+@media (max-width: 992px) {
+  .parent2 {
+    grid-template-areas:
+      "i1 i2"
+      "i3 i3"
+      "i4 i5"
+      "i6 i6"
+      "i7 i8"
+      "i9 i9"
+      "i10 i10";
+  }
+
+  .circle {
+    visibility: visible;
+  }
+}
+
+@media (max-width: 600px) {
+  .parent2 {
+    grid-template-areas:
+      "i1"
+      "i2"
+      "i3"
+      "i4"
+      "i5"
+      "i6"
+      "i7"
+      "i8"
+      "i9"
+      "i10";
+  }
+}
